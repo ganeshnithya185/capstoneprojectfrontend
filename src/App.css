@@ -108,3 +108,8 @@
   font-family: "Arial Narrow Bold", sans-serif;
   padding-top: 20px;
 }
+.nav-link-with-underline {
+  padding-left: 30px;
+  color: blue !important;
+  font: weight 700px;;
+}

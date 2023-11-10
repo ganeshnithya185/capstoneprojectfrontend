@@ -89,6 +89,12 @@ const Admin = () => {
         </div>
       </header>
       <div className="container heading-1">
+        <Nav.Link
+          className="container nav-link-with-underline m-2"
+          href="/viewer"
+        >
+          Click here to go Markdown Editer
+        </Nav.Link>
         <ReactMarkdown>{`# Explore All Deals`}</ReactMarkdown>
       </div>
 
@@ -126,6 +132,7 @@ const Admin = () => {
               </Dropdown.Menu>
             </Dropdown>
           </div>
+
           <div className="col-9">
             <div className="row">
               {data.map((item, index) => {
@@ -153,6 +160,12 @@ const Admin = () => {
                           className="m-2"
                         >
                           Delete
+                        </Button>
+                        <Button
+                          onClick={() => navigate("/update")}
+                          variant="info"
+                        >
+                          Upload Books
                         </Button>
                       </div>
                     </div>
