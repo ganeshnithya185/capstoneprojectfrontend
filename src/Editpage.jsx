@@ -20,15 +20,17 @@ const Edit = () => {
 
   useEffect(() => {
     // Fetch the book data using the book ID
-    axios.get(`http://localhost:4000/api/book/get/${id}`).then((response) => {
-      const book = response.data; // Assuming the response contains book details
-      setBookData({
-        booktitle: book.booktitle,
-        bookdescription: book.bookdescription,
-        authorname: book.authorname,
-        bookurl: book.bookurl,
+    axios
+      .get(`https://backendtask-y3bj.onrender.com/api/book/get/${id}`)
+      .then((response) => {
+        const book = response.data; // Assuming the response contains book details
+        setBookData({
+          booktitle: book.booktitle,
+          bookdescription: book.bookdescription,
+          authorname: book.authorname,
+          bookurl: book.bookurl,
+        });
       });
-    });
   }, [id]);
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +44,10 @@ const Edit = () => {
     };
 
     axios
-      .put(`http://localhost:4000/api/book/update/${id}`, updatedBook)
+      .put(
+        `https://backendtask-y3bj.onrender.com/api/book/update/${id}`,
+        updatedBook
+      )
       .then((result) => {
         console.log(result);
         // Redirect to a different page or navigate back to the book listing page

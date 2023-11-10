@@ -18,7 +18,9 @@ const Admin = () => {
 
   const fetchdata = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/api/book/get");
+      const response = await axios.get(
+        "https://backendtask-y3bj.onrender.com/api/book/get"
+      );
       console.log("Data received:", response.data);
       Setdata(response.data.message);
     } catch (error) {
@@ -28,7 +30,7 @@ const Admin = () => {
   const handleDelete = async (id) => {
     try {
       const res = await axios.delete(
-        `http://localhost:4000/api/book/delete/${id}`
+        `https://backendtask-y3bj.onrender.com/api/book/delete/${id}`
       );
       console.log("res", res);
       // Filter the todos based on the ID and update the state
