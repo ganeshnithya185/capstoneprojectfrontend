@@ -36,3 +36,75 @@
     transform: rotate(360deg);
   }
 }
+.signup {
+  text-align: center;
+  font-size: medium;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 20px;
+  color: beige;
+}
+.form-design {
+  width: 500px;
+  background-color: #d5e3e7;
+  margin-left: 400px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 2px;
+  height: auto;
+}
+
+.btn-login {
+  margin-left: 300px;
+}
+.form-login {
+  width: 500px;
+  background-color: #10576e;
+  margin-left: 500px;
+  box-shadow: 5px 5px 10px rgba(red, 2, 2, 0.1);
+  padding: 2px;
+  height: auto;
+  color: white;
+}
+.signup-container {
+  background-image: url("https://img.freepik.com/free-photo/book-desk-education-concept_1150-8959.jpg?size=626&ext=jpg&ga=GA1.1.287051686.1691229142&semt=ais");
+  background-size: cover; /* Adjust this property based on your preference */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 740px;
+  background-position: center center;
+  /* Additional background properties and styling can be added here */
+}
+.login-container {
+  background-image: url("https://img.freepik.com/free-photo/books-imagination-still-life_23-2149082215.jpg?size=626&ext=jpg&ga=GA1.1.287051686.1691229142&semt=ais");
+  background-size: cover; /* Adjust this property based on your preference */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 740px;
+  background-position: center center;
+
+  /* Additional background properties and styling can be added here */
+}
+
+.login {
+  text-align: center;
+  font-size: medium;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  padding-top: 20px;
+  color: beige;
+}
+.header {
+  width: auto;
+  height: 300px;
+  color: white;
+  padding-left: 70px;
+  padding-top: 50px;
+  font-family: Verdana, Tahoma, sans-serif;
+  background-image: url("https://img.freepik.com/free-photo/books-imagination-still-life_23-2149082215.jpg?size=626&ext=jpg&ga=GA1.1.287051686.1691229142&semt=ais");
+}
+.image-2 {
+  padding-bottom: 40px;
+}
+.heading-1 {
+  color: black;
+  font-family: "Arial Narrow Bold", sans-serif;
+  padding-top: 20px;
+}
