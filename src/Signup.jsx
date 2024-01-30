@@ -12,11 +12,7 @@ const Signup = () => {
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const isTaken = await isUsernameTaken(username);
-    if (isTaken) {
-      alert("Username is already taken. Please choose another one.");
-      return;
-    }
+
     axios
       .post("https://backendtask-y3bj.onrender.com/api/user/register", {
         username,
@@ -30,26 +26,6 @@ const Signup = () => {
         Setpassword("");
         navigate("login");
       });
-    const isUsernameTaken = async (username) => {
-      try {
-        // Make an API call to check if the username is taken
-        const response = await axios.get(
-          `https://backendtask-y3bj.onrender.com/api/user/checkUsername/${username}`
-        );  
-
-        // Show alert if the username is taken
-        if (response.data.exists) {
-          alert("Username is already taken. Please choose another one.");
-          return true;
-        }
-
-        return false;
-      } catch (error) {
-        console.error("Error checking username availability:", error);
-        // Handle errors, you might want to return false in case of an error
-        return false;
-      }
-    };
   };
   return (
     <div>
