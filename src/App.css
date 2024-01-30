@@ -45,11 +45,12 @@
 }
 .form-design {
   width: 500px;
-  background-color: #d5e3e7;
+  background-color: #04708e;
   margin-left: 400px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   padding: 2px;
-  height: auto;
+  height: 250px;
+  width: 500px;
 }
 
 .btn-login {
@@ -111,5 +112,5 @@
 .nav-link-with-underline {
   padding-left: 30px;
   color: blue !important;
-  font: weight 700px;;
+  font: weight 700px;
 }

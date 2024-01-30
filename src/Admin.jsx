@@ -161,7 +161,7 @@ const Admin = () => {
                           variant="danger"
                           className="m-2"
                         >
-                          Delete
+                          Delete  
                         </Button>
                         <Button
                           onClick={() => navigate("/update")}

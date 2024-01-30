@@ -10,8 +10,13 @@ const Signup = () => {
   const [email, Setemail] = useState("");
   const [password, Setpassword] = useState("");
   const navigate = useNavigate();
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const isTaken = await isUsernameTaken(username);
+    if (isTaken) {
+      alert("Username is already taken. Please choose another one.");
+      return;
+    }
     axios
       .post("https://backendtask-y3bj.onrender.com/api/user/register", {
         username,
@@ -25,6 +30,26 @@ const Signup = () => {
         Setpassword("");
         navigate("login");
       });
+    const isUsernameTaken = async (username) => {
+      try {
+        // Make an API call to check if the username is taken
+        const response = await axios.get(
+          `https://backendtask-y3bj.onrender.com/api/user/checkUsername/${username}`
+        );  
+
+        // Show alert if the username is taken
+        if (response.data.exists) {
+          alert("Username is already taken. Please choose another one.");
+          return true;
+        }
+
+        return false;
+      } catch (error) {
+        console.error("Error checking username availability:", error);
+        // Handle errors, you might want to return false in case of an error
+        return false;
+      }
+    };
   };
   return (
     <div>
@@ -48,41 +73,41 @@ const Signup = () => {
             <h1>Signup</h1>
           </header>
           <div className="form-design">
-            <Form onSubmit={handleSubmit}>
+            <Form className="p-2 mb-2" onSubmit={handleSubmit}>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Name</Form.Label>
                 <Form.Control
                   value={username}
                   onChange={(e) => Setusername(e.target.value)}
                   type="text"
                   placeholder="Enter your name"
+                  required
                 />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Email address</Form.Label>
                 <Form.Control
                   value={email}
                   onChange={(e) => Setemail(e.target.value)}
                   type="email"
                   placeholder="Enter your Email"
+                  required
                 />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Password</Form.Label>
                 <Form.Control
                   value={password}
                   onChange={(e) => Setpassword(e.target.value)}
                   type="password1"
                   placeholder="password"
+                  required
                 />
               </Form.Group>
               <Button type="submit" variant="success">

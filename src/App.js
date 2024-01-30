@@ -9,6 +9,7 @@ import Admin from "./Admin";
 import Viewer from "./Viewer";
 import Upload from "./Upload";
 import Editpage from "./Editpage";
+import Homepage from "./Homepage";
 const App = () => {
   return (
     <div>
@@ -20,6 +21,7 @@ const App = () => {
           <Route path="viewer" element={<Viewer />} />
           <Route path="update" element={<Upload />} />
           <Route path="edit/:id" element={<Editpage />} />
+          <Route path="home" element={<Homepage />} />
         </Route>
       </Routes>
     </div>
